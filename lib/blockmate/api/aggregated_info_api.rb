@@ -244,8 +244,10 @@ module Blockmate
 
     # Get transactions
     # @param [Hash] opts the optional parameters
-    # @option opts [Date] :since Set time from which the transactions will be get. The parameter is passed as-is to backend services. The default value is 30 days before the actual date or 30 days before the date specified in \&quot;until\&quot; parameter. 
-    # @option opts [Date] :_until Set time to which the transactions will be get. The parameter is passed as-is to backend services. The default value is the actual date. 
+    # @option opts [Date] :since Set time from which the transactions will be get. 
+    # @option opts [Date] :_until Set time to which the transactions will be get. The default value is the actual date. 
+    # @option opts [Float] :limit Limit the number of the transactions in the response. Default page size is 50. 
+    # @option opts [String] :cursor Specify on requesting the next page. Use the &#x60;page_cursor&#x60; from the previous response. 
     # @option opts [String] :currency Currency to convert to. 
     # @option opts [String] :account_filter Filter results to only provided account. When omitted, it returns all transactions from all accounts. 
     # @return [Transactions200Response]
@@ -256,8 +258,10 @@ module Blockmate
 
     # Get transactions
     # @param [Hash] opts the optional parameters
-    # @option opts [Date] :since Set time from which the transactions will be get. The parameter is passed as-is to backend services. The default value is 30 days before the actual date or 30 days before the date specified in \&quot;until\&quot; parameter. 
-    # @option opts [Date] :_until Set time to which the transactions will be get. The parameter is passed as-is to backend services. The default value is the actual date. 
+    # @option opts [Date] :since Set time from which the transactions will be get. 
+    # @option opts [Date] :_until Set time to which the transactions will be get. The default value is the actual date. 
+    # @option opts [Float] :limit Limit the number of the transactions in the response. Default page size is 50. 
+    # @option opts [String] :cursor Specify on requesting the next page. Use the &#x60;page_cursor&#x60; from the previous response. 
     # @option opts [String] :currency Currency to convert to. 
     # @option opts [String] :account_filter Filter results to only provided account. When omitted, it returns all transactions from all accounts. 
     # @return [Array<(Transactions200Response, Integer, Hash)>] Transactions200Response data, response status code and response headers
@@ -282,6 +286,8 @@ module Blockmate
       query_params = opts[:query_params] || {}
       query_params[:'since'] = opts[:'since'] if !opts[:'since'].nil?
       query_params[:'until'] = opts[:'_until'] if !opts[:'_until'].nil?
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'cursor'] = opts[:'cursor'] if !opts[:'cursor'].nil?
       query_params[:'currency'] = opts[:'currency'] if !opts[:'currency'].nil?
       query_params[:'account-filter'] = opts[:'account_filter'] if !opts[:'account_filter'].nil?
 

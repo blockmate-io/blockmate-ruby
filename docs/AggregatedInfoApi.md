@@ -291,8 +291,10 @@ end
 
 api_instance = Blockmate::AggregatedInfoApi.new
 opts = {
-  since: Date.parse('Wed Jan 01 01:00:00 CET 2020'), # Date | Set time from which the transactions will be get. The parameter is passed as-is to backend services. The default value is 30 days before the actual date or 30 days before the date specified in \"until\" parameter. 
-  _until: Date.parse('Sat Feb 01 01:00:00 CET 2020'), # Date | Set time to which the transactions will be get. The parameter is passed as-is to backend services. The default value is the actual date. 
+  since: Date.parse('Wed Jan 01 01:00:00 CET 2020'), # Date | Set time from which the transactions will be get. 
+  _until: Date.parse('Sat Feb 01 01:00:00 CET 2020'), # Date | Set time to which the transactions will be get. The default value is the actual date. 
+  limit: 10, # Float | Limit the number of the transactions in the response. Default page size is 50. 
+  cursor: 'cursor_example', # String | Specify on requesting the next page. Use the `page_cursor` from the previous response. 
   currency: 'USD', # String | Currency to convert to. 
   account_filter: '497f6eca-6276-4993-bfeb-53cbbbba6f08' # String | Filter results to only provided account. When omitted, it returns all transactions from all accounts. 
 }
@@ -328,8 +330,10 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **since** | **Date** | Set time from which the transactions will be get. The parameter is passed as-is to backend services. The default value is 30 days before the actual date or 30 days before the date specified in \&quot;until\&quot; parameter.  | [optional] |
-| **_until** | **Date** | Set time to which the transactions will be get. The parameter is passed as-is to backend services. The default value is the actual date.  | [optional] |
+| **since** | **Date** | Set time from which the transactions will be get.  | [optional] |
+| **_until** | **Date** | Set time to which the transactions will be get. The default value is the actual date.  | [optional] |
+| **limit** | **Float** | Limit the number of the transactions in the response. Default page size is 50.  | [optional] |
+| **cursor** | **String** | Specify on requesting the next page. Use the &#x60;page_cursor&#x60; from the previous response.  | [optional] |
 | **currency** | **String** | Currency to convert to.  | [optional] |
 | **account_filter** | **String** | Filter results to only provided account. When omitted, it returns all transactions from all accounts.  | [optional] |
 

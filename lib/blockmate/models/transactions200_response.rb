@@ -15,6 +15,9 @@ require 'time'
 
 module Blockmate
   class Transactions200Response
+    # Use this as `cursor` in the next request to get the next page. The `page_cursor` has a one hour validity.
+    attr_accessor :page_cursor
+
     attr_accessor :accounts
 
     attr_accessor :transactions
@@ -22,6 +25,7 @@ module Blockmate
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'page_cursor' => :'page_cursor',
         :'accounts' => :'accounts',
         :'transactions' => :'transactions'
       }
@@ -35,6 +39,7 @@ module Blockmate
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'page_cursor' => :'String',
         :'accounts' => :'Array<Transactions200ResponseAccountsInner>',
         :'transactions' => :'Array<Transaction>'
       }
@@ -60,6 +65,10 @@ module Blockmate
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'page_cursor')
+        self.page_cursor = attributes[:'page_cursor']
+      end
 
       if attributes.key?(:'accounts')
         if (value = attributes[:'accounts']).is_a?(Array)
@@ -97,6 +106,7 @@ module Blockmate
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          page_cursor == o.page_cursor &&
           accounts == o.accounts &&
           transactions == o.transactions
     end
@@ -110,7 +120,7 @@ module Blockmate
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [accounts, transactions].hash
+      [page_cursor, accounts, transactions].hash
     end
 
     # Builds the object from hash
