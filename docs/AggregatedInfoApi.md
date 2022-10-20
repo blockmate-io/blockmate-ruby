@@ -8,6 +8,7 @@ All URIs are relative to *http://localhost*
 | [**account_providers_list**](AggregatedInfoApi.md#account_providers_list) | **GET** /v1/aggregate/account_providers | Get list of account providers |
 | [**accounts**](AggregatedInfoApi.md#accounts) | **GET** /v1/aggregate/accounts | List accounts |
 | [**balance**](AggregatedInfoApi.md#balance) | **GET** /v1/aggregate/balance | Get balance |
+| [**n_ft_metadata**](AggregatedInfoApi.md#n_ft_metadata) | **GET** /v1/aggregate/nft_metadata | Get NFT metadata |
 | [**transactions**](AggregatedInfoApi.md#transactions) | **GET** /v1/aggregate/transactions | Get transactions |
 
 
@@ -261,6 +262,70 @@ end
 ### Return type
 
 [**Balance200Response**](Balance200Response.md)
+
+### Authorization
+
+[UserJWT](../README.md#UserJWT)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## n_ft_metadata
+
+> <Hash<String, NFTMetadata200ResponseValue>> n_ft_metadata
+
+Get NFT metadata
+
+### Examples
+
+```ruby
+require 'time'
+require 'blockmate'
+# setup authorization
+Blockmate.configure do |config|
+  # Configure Bearer authorization (JWT): UserJWT
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = Blockmate::AggregatedInfoApi.new
+
+begin
+  # Get NFT metadata
+  result = api_instance.n_ft_metadata
+  p result
+rescue Blockmate::ApiError => e
+  puts "Error when calling AggregatedInfoApi->n_ft_metadata: #{e}"
+end
+```
+
+#### Using the n_ft_metadata_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<Hash<String, NFTMetadata200ResponseValue>>, Integer, Hash)> n_ft_metadata_with_http_info
+
+```ruby
+begin
+  # Get NFT metadata
+  data, status_code, headers = api_instance.n_ft_metadata_with_http_info
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <Hash<String, NFTMetadata200ResponseValue>>
+rescue Blockmate::ApiError => e
+  puts "Error when calling AggregatedInfoApi->n_ft_metadata_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Hash&lt;String, NFTMetadata200ResponseValue&gt;**](NFTMetadata200ResponseValue.md)
 
 ### Authorization
 

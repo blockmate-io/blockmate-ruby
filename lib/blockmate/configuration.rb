@@ -305,6 +305,12 @@ module Blockmate
           description: "Call",
           }
         ],
+        "AggregatedInfoApi.n_ft_metadata": [
+          {
+          url: "https://aisp-api.blockmate.io",
+          description: "Call",
+          }
+        ],
         "AggregatedInfoApi.transactions": [
           {
           url: "https://aisp-api.blockmate.io",

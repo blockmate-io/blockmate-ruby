@@ -94,6 +94,7 @@ Class | Method | HTTP request | Description
 *Blockmate::AggregatedInfoApi* | [**account_providers_list**](docs/AggregatedInfoApi.md#account_providers_list) | **GET** /v1/aggregate/account_providers | Get list of account providers
 *Blockmate::AggregatedInfoApi* | [**accounts**](docs/AggregatedInfoApi.md#accounts) | **GET** /v1/aggregate/accounts | List accounts
 *Blockmate::AggregatedInfoApi* | [**balance**](docs/AggregatedInfoApi.md#balance) | **GET** /v1/aggregate/balance | Get balance
+*Blockmate::AggregatedInfoApi* | [**n_ft_metadata**](docs/AggregatedInfoApi.md#n_ft_metadata) | **GET** /v1/aggregate/nft_metadata | Get NFT metadata
 *Blockmate::AggregatedInfoApi* | [**transactions**](docs/AggregatedInfoApi.md#transactions) | **GET** /v1/aggregate/transactions | Get transactions
 *Blockmate::AuthenticationApi* | [**user_api_authenticate_developer**](docs/AuthenticationApi.md#user_api_authenticate_developer) | **GET** /v1/auth/developer | Authenticate developer
 *Blockmate::AuthenticationApi* | [**user_api_authenticate_project**](docs/AuthenticationApi.md#user_api_authenticate_project) | **GET** /v1/auth | Authenticate project
@@ -144,7 +145,19 @@ Class | Method | HTTP request | Description
  - [Blockmate::GetAddressRiskScore200Response](docs/GetAddressRiskScore200Response.md)
  - [Blockmate::GetTransactionRiskScore200Response](docs/GetTransactionRiskScore200Response.md)
  - [Blockmate::GetUser404Response](docs/GetUser404Response.md)
+ - [Blockmate::Metadata](docs/Metadata.md)
+ - [Blockmate::MetadataAttributesInner](docs/MetadataAttributesInner.md)
  - [Blockmate::Movement](docs/Movement.md)
+ - [Blockmate::NFTMetadata200ResponseValue](docs/NFTMetadata200ResponseValue.md)
+ - [Blockmate::NftContractMetadata](docs/NftContractMetadata.md)
+ - [Blockmate::NftId](docs/NftId.md)
+ - [Blockmate::NftIdTokenMetadata](docs/NftIdTokenMetadata.md)
+ - [Blockmate::NftMedia](docs/NftMedia.md)
+ - [Blockmate::NftSpamInfo](docs/NftSpamInfo.md)
+ - [Blockmate::NftTokenUri](docs/NftTokenUri.md)
+ - [Blockmate::OwnedNft](docs/OwnedNft.md)
+ - [Blockmate::OwnedNftContract](docs/OwnedNftContract.md)
+ - [Blockmate::OwnedNftMedia](docs/OwnedNftMedia.md)
  - [Blockmate::RiskReportCategory](docs/RiskReportCategory.md)
  - [Blockmate::Transaction](docs/Transaction.md)
  - [Blockmate::TransactionRiskReport](docs/TransactionRiskReport.md)
