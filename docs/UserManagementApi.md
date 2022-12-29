@@ -1,6 +1,6 @@
 # Blockmate::UserManagementApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.blockmate.io*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |

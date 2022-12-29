@@ -138,8 +138,8 @@ module Blockmate
     attr_accessor :force_ending_format
 
     def initialize
-      @scheme = 'http'
-      @host = 'localhost'
+      @scheme = 'https'
+      @host = 'api.blockmate.io'
       @base_path = ''
       @server_index = 0
       @server_operation_index = {}
@@ -249,170 +249,14 @@ module Blockmate
     def server_settings
       [
         {
-          url: "",
-          description: "No description provided",
+          url: "https://api.blockmate.io",
+          description: "Blockmate API",
         }
       ]
     end
 
     def operation_server_settings
       {
-        "AccountProviderInfoApi.connect_account": [
-          {
-          url: "https://aisp-api.blockmate.io",
-          description: "Call",
-          }
-        ],
-        "AccountProviderInfoApi.delete_account": [
-          {
-          url: "https://aisp-api.blockmate.io",
-          description: "Call",
-          }
-        ],
-        "AccountProviderInfoApi.get_account_hint": [
-          {
-          url: "https://aisp-api.blockmate.io",
-          description: "Call",
-          }
-        ],
-        "AddressNameAndCategoryInfoApi.get_address_name_info": [
-          {
-          url: "https://data-api.blockmate.io",
-          description: "Call",
-          }
-        ],
-        "AggregatedInfoApi.account_provider_hints_list": [
-          {
-          url: "https://aisp-api.blockmate.io",
-          description: "Call",
-          }
-        ],
-        "AggregatedInfoApi.account_providers_list": [
-          {
-          url: "https://aisp-api.blockmate.io",
-          description: "Call",
-          }
-        ],
-        "AggregatedInfoApi.accounts": [
-          {
-          url: "https://aisp-api.blockmate.io",
-          description: "Call",
-          }
-        ],
-        "AggregatedInfoApi.balance": [
-          {
-          url: "https://aisp-api.blockmate.io",
-          description: "Call",
-          }
-        ],
-        "AggregatedInfoApi.n_ft_metadata": [
-          {
-          url: "https://aisp-api.blockmate.io",
-          description: "Call",
-          }
-        ],
-        "AggregatedInfoApi.transactions": [
-          {
-          url: "https://aisp-api.blockmate.io",
-          description: "Call",
-          }
-        ],
-        "AuthenticationApi.user_api_authenticate_developer": [
-          {
-          url: "https://auth.blockmate.io",
-          description: "Authentication",
-          }
-        ],
-        "AuthenticationApi.user_api_authenticate_project": [
-          {
-          url: "https://auth.blockmate.io",
-          description: "Authentication",
-          }
-        ],
-        "ExchangeRateInfoApi.get_current_exchange_rate": [
-          {
-          url: "https://data-api.blockmate.io",
-          description: "Call",
-          }
-        ],
-        "ExchangeRateInfoApi.get_historical_exchange_rate": [
-          {
-          url: "https://data-api.blockmate.io",
-          description: "Call",
-          }
-        ],
-        "RiskInfoApi.get_address_risk_score": [
-          {
-          url: "https://risk-api.blockmate.io",
-          description: "Call",
-          }
-        ],
-        "RiskInfoApi.get_address_risk_score_case": [
-          {
-          url: "https://risk-api.blockmate.io",
-          description: "Call",
-          }
-        ],
-        "RiskInfoApi.get_address_risk_score_details": [
-          {
-          url: "https://risk-api.blockmate.io",
-          description: "Call",
-          }
-        ],
-        "RiskInfoApi.get_transaction_risk_score": [
-          {
-          url: "https://risk-api.blockmate.io",
-          description: "Call",
-          }
-        ],
-        "RiskInfoApi.get_transaction_risk_score_case": [
-          {
-          url: "https://risk-api.blockmate.io",
-          description: "Call",
-          }
-        ],
-        "RiskInfoApi.get_transaction_risk_score_details": [
-          {
-          url: "https://risk-api.blockmate.io",
-          description: "Call",
-          }
-        ],
-        "UserManagementApi.auth_user": [
-          {
-          url: "https://auth.blockmate.io",
-          description: "Authentication",
-          }
-        ],
-        "UserManagementApi.create_user": [
-          {
-          url: "https://auth.blockmate.io",
-          description: "Authentication",
-          }
-        ],
-        "UserManagementApi.delete_user": [
-          {
-          url: "https://auth.blockmate.io",
-          description: "Authentication",
-          }
-        ],
-        "UserManagementApi.get_user": [
-          {
-          url: "https://auth.blockmate.io",
-          description: "Authentication",
-          }
-        ],
-        "UserManagementApi.list_users": [
-          {
-          url: "https://auth.blockmate.io",
-          description: "Authentication",
-          }
-        ],
-        "UserManagementApi.update_user": [
-          {
-          url: "https://auth.blockmate.io",
-          description: "Authentication",
-          }
-        ],
       }
     end
 

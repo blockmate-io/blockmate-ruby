@@ -82,22 +82,26 @@ end
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.blockmate.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *Blockmate::AccountProviderInfoApi* | [**connect_account**](docs/AccountProviderInfoApi.md#connect_account) | **POST** /v1/{account_provider}/connect | Connect new account
 *Blockmate::AccountProviderInfoApi* | [**delete_account**](docs/AccountProviderInfoApi.md#delete_account) | **DELETE** /v1/{account_provider}/account/{account_id} | Delete account
 *Blockmate::AccountProviderInfoApi* | [**get_account_hint**](docs/AccountProviderInfoApi.md#get_account_hint) | **GET** /v1/{account_provider}/connect | Get account hint
-*Blockmate::AddressNameAndCategoryInfoApi* | [**get_address_name_info**](docs/AddressNameAndCategoryInfoApi.md#get_address_name_info) | **GET** /v1/addressname/simple | Get address name and category info
+*Blockmate::AddressNameAndCategoryInfoApi* | [**get_address_name_info_multi**](docs/AddressNameAndCategoryInfoApi.md#get_address_name_info_multi) | **POST** /v1/addressname/multi | Get address name and category info for multiple addresses
+*Blockmate::AddressNameAndCategoryInfoApi* | [**get_address_name_info_single**](docs/AddressNameAndCategoryInfoApi.md#get_address_name_info_single) | **GET** /v1/addressname/simple | Get address name and category info for single address
 *Blockmate::AggregatedInfoApi* | [**account_provider_hints_list**](docs/AggregatedInfoApi.md#account_provider_hints_list) | **GET** /v1/aggregate/account_provider_hints | Get list of account providers hints
 *Blockmate::AggregatedInfoApi* | [**account_providers_list**](docs/AggregatedInfoApi.md#account_providers_list) | **GET** /v1/aggregate/account_providers | Get list of account providers
 *Blockmate::AggregatedInfoApi* | [**accounts**](docs/AggregatedInfoApi.md#accounts) | **GET** /v1/aggregate/accounts | List accounts
 *Blockmate::AggregatedInfoApi* | [**balance**](docs/AggregatedInfoApi.md#balance) | **GET** /v1/aggregate/balance | Get balance
 *Blockmate::AggregatedInfoApi* | [**n_ft_metadata**](docs/AggregatedInfoApi.md#n_ft_metadata) | **GET** /v1/aggregate/nft_metadata | Get NFT metadata
 *Blockmate::AggregatedInfoApi* | [**transactions**](docs/AggregatedInfoApi.md#transactions) | **GET** /v1/aggregate/transactions | Get transactions
+*Blockmate::AnalyticsApi* | [**get_analytics**](docs/AnalyticsApi.md#get_analytics) | **GET** /v1/analytics/{account_provider}/account/{account_id}/stats | Get analytics focused on gaming
 *Blockmate::AuthenticationApi* | [**user_api_authenticate_developer**](docs/AuthenticationApi.md#user_api_authenticate_developer) | **GET** /v1/auth/developer | Authenticate developer
 *Blockmate::AuthenticationApi* | [**user_api_authenticate_project**](docs/AuthenticationApi.md#user_api_authenticate_project) | **GET** /v1/auth | Authenticate project
+*Blockmate::ENSApi* | [**get_address_from_domain**](docs/ENSApi.md#get_address_from_domain) | **GET** /v1/ens/addressFromDomain | Get address for specified ENS domain
+*Blockmate::ENSApi* | [**get_domain_from_address**](docs/ENSApi.md#get_domain_from_address) | **GET** /v1/ens/domainFromAddress | Get domain and metadata for specified ENS address
 *Blockmate::ExchangeRateInfoApi* | [**get_current_exchange_rate**](docs/ExchangeRateInfoApi.md#get_current_exchange_rate) | **GET** /v1/exchangerate/current | Get current exchange rate
 *Blockmate::ExchangeRateInfoApi* | [**get_historical_exchange_rate**](docs/ExchangeRateInfoApi.md#get_historical_exchange_rate) | **GET** /v1/exchangerate/history | Get historical exchange rate
 *Blockmate::RiskInfoApi* | [**get_address_risk_score**](docs/RiskInfoApi.md#get_address_risk_score) | **GET** /v1/risk/score | Get address risk score
@@ -141,8 +145,15 @@ Class | Method | HTTP request | Description
  - [Blockmate::GetAccountHint200ResponseFields](docs/GetAccountHint200ResponseFields.md)
  - [Blockmate::GetAccountHint403Response](docs/GetAccountHint403Response.md)
  - [Blockmate::GetAccountHint404Response](docs/GetAccountHint404Response.md)
- - [Blockmate::GetAddressNameInfo200Response](docs/GetAddressNameInfo200Response.md)
+ - [Blockmate::GetAddressFromDomain200Response](docs/GetAddressFromDomain200Response.md)
+ - [Blockmate::GetAddressNameInfoSingle200Response](docs/GetAddressNameInfoSingle200Response.md)
  - [Blockmate::GetAddressRiskScore200Response](docs/GetAddressRiskScore200Response.md)
+ - [Blockmate::GetAnalytics200Response](docs/GetAnalytics200Response.md)
+ - [Blockmate::GetAnalytics200ResponseValue](docs/GetAnalytics200ResponseValue.md)
+ - [Blockmate::GetDomainFromAddress200Response](docs/GetDomainFromAddress200Response.md)
+ - [Blockmate::GetDomainFromAddress200ResponseMetadata](docs/GetDomainFromAddress200ResponseMetadata.md)
+ - [Blockmate::GetDomainFromAddress200ResponseMetadataAttributesInner](docs/GetDomainFromAddress200ResponseMetadataAttributesInner.md)
+ - [Blockmate::GetDomainFromAddress200ResponseMetadataAttributesInnerValue](docs/GetDomainFromAddress200ResponseMetadataAttributesInnerValue.md)
  - [Blockmate::GetTransactionRiskScore200Response](docs/GetTransactionRiskScore200Response.md)
  - [Blockmate::GetUser404Response](docs/GetUser404Response.md)
  - [Blockmate::Metadata](docs/Metadata.md)

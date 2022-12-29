@@ -19,32 +19,101 @@ module Blockmate
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Get address name and category info
-    # @param address [String] Address for wich name and category should be returned
+    # Get address name and category info for multiple addresses
     # @param chain [String] Blockchain identifier
     # @param [Hash] opts the optional parameters
-    # @return [GetAddressNameInfo200Response]
-    def get_address_name_info(address, chain, opts = {})
-      data, _status_code, _headers = get_address_name_info_with_http_info(address, chain, opts)
+    # @option opts [Array<String>] :request_body OK
+    # @return [Hash<String, GetAddressNameInfoSingle200Response>]
+    def get_address_name_info_multi(chain, opts = {})
+      data, _status_code, _headers = get_address_name_info_multi_with_http_info(chain, opts)
       data
     end
 
-    # Get address name and category info
-    # @param address [String] Address for wich name and category should be returned
+    # Get address name and category info for multiple addresses
     # @param chain [String] Blockchain identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(GetAddressNameInfo200Response, Integer, Hash)>] GetAddressNameInfo200Response data, response status code and response headers
-    def get_address_name_info_with_http_info(address, chain, opts = {})
+    # @option opts [Array<String>] :request_body OK
+    # @return [Array<(Hash<String, GetAddressNameInfoSingle200Response>, Integer, Hash)>] Hash<String, GetAddressNameInfoSingle200Response> data, response status code and response headers
+    def get_address_name_info_multi_with_http_info(chain, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AddressNameAndCategoryInfoApi.get_address_name_info ...'
-      end
-      # verify the required parameter 'address' is set
-      if @api_client.config.client_side_validation && address.nil?
-        fail ArgumentError, "Missing the required parameter 'address' when calling AddressNameAndCategoryInfoApi.get_address_name_info"
+        @api_client.config.logger.debug 'Calling API: AddressNameAndCategoryInfoApi.get_address_name_info_multi ...'
       end
       # verify the required parameter 'chain' is set
       if @api_client.config.client_side_validation && chain.nil?
-        fail ArgumentError, "Missing the required parameter 'chain' when calling AddressNameAndCategoryInfoApi.get_address_name_info"
+        fail ArgumentError, "Missing the required parameter 'chain' when calling AddressNameAndCategoryInfoApi.get_address_name_info_multi"
+      end
+      # resource path
+      local_var_path = '/v1/addressname/multi'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'chain'] = chain
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'request_body'])
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'Hash<String, GetAddressNameInfoSingle200Response>'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['UserJWT']
+
+      new_options = opts.merge(
+        :operation => :"AddressNameAndCategoryInfoApi.get_address_name_info_multi",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AddressNameAndCategoryInfoApi#get_address_name_info_multi\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get address name and category info for single address
+    # @param address [String] Address for which name and category should be returned
+    # @param chain [String] Blockchain identifier
+    # @param [Hash] opts the optional parameters
+    # @return [GetAddressNameInfoSingle200Response]
+    def get_address_name_info_single(address, chain, opts = {})
+      data, _status_code, _headers = get_address_name_info_single_with_http_info(address, chain, opts)
+      data
+    end
+
+    # Get address name and category info for single address
+    # @param address [String] Address for which name and category should be returned
+    # @param chain [String] Blockchain identifier
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetAddressNameInfoSingle200Response, Integer, Hash)>] GetAddressNameInfoSingle200Response data, response status code and response headers
+    def get_address_name_info_single_with_http_info(address, chain, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: AddressNameAndCategoryInfoApi.get_address_name_info_single ...'
+      end
+      # verify the required parameter 'address' is set
+      if @api_client.config.client_side_validation && address.nil?
+        fail ArgumentError, "Missing the required parameter 'address' when calling AddressNameAndCategoryInfoApi.get_address_name_info_single"
+      end
+      # verify the required parameter 'chain' is set
+      if @api_client.config.client_side_validation && chain.nil?
+        fail ArgumentError, "Missing the required parameter 'chain' when calling AddressNameAndCategoryInfoApi.get_address_name_info_single"
       end
       # resource path
       local_var_path = '/v1/addressname/simple'
@@ -66,13 +135,13 @@ module Blockmate
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetAddressNameInfo200Response'
+      return_type = opts[:debug_return_type] || 'GetAddressNameInfoSingle200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['UserJWT']
 
       new_options = opts.merge(
-        :operation => :"AddressNameAndCategoryInfoApi.get_address_name_info",
+        :operation => :"AddressNameAndCategoryInfoApi.get_address_name_info_single",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -83,7 +152,7 @@ module Blockmate
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AddressNameAndCategoryInfoApi#get_address_name_info\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: AddressNameAndCategoryInfoApi#get_address_name_info_single\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
