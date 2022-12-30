@@ -20,7 +20,7 @@ module Blockmate
       @api_client = api_client
     end
     # Get analytics focused on gaming
-    # Get analytics focused on gaming. All empty values are omitted from the response.
+    # Get analytics focused on gaming. All empty values are omitted from the response. Values are recalculated once per day.
     # @param account_provider [String] URL value from account_providers method
     # @param account_id [String] Account ID
     # @param [Hash] opts the optional parameters
@@ -31,7 +31,7 @@ module Blockmate
     end
 
     # Get analytics focused on gaming
-    # Get analytics focused on gaming. All empty values are omitted from the response.
+    # Get analytics focused on gaming. All empty values are omitted from the response. Values are recalculated once per day.
     # @param account_provider [String] URL value from account_providers method
     # @param account_id [String] Account ID
     # @param [Hash] opts the optional parameters

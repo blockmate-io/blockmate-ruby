@@ -13,7 +13,7 @@ All URIs are relative to *https://api.blockmate.io*
 
 Get analytics focused on gaming
 
-Get analytics focused on gaming. All empty values are omitted from the response.
+Get analytics focused on gaming. All empty values are omitted from the response. Values are recalculated once per day.
 
 ### Examples
 
