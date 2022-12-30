@@ -19,34 +19,34 @@ module Blockmate
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Get analytics focused on gaming
-    # Get analytics focused on gaming. All empty values are omitted from the response. Values are recalculated once per day.
+    # Get analytics focused on gaming for specified account and provider
+    # Get analytics focused on gaming for specified account and provider. All empty values are omitted from the response. Values are recalculated once per day.
     # @param account_provider [String] URL value from account_providers method
     # @param account_id [String] Account ID
     # @param [Hash] opts the optional parameters
-    # @return [GetAnalytics200Response]
-    def get_analytics(account_provider, account_id, opts = {})
-      data, _status_code, _headers = get_analytics_with_http_info(account_provider, account_id, opts)
+    # @return [Analytics]
+    def get_account_analytics(account_provider, account_id, opts = {})
+      data, _status_code, _headers = get_account_analytics_with_http_info(account_provider, account_id, opts)
       data
     end
 
-    # Get analytics focused on gaming
-    # Get analytics focused on gaming. All empty values are omitted from the response. Values are recalculated once per day.
+    # Get analytics focused on gaming for specified account and provider
+    # Get analytics focused on gaming for specified account and provider. All empty values are omitted from the response. Values are recalculated once per day.
     # @param account_provider [String] URL value from account_providers method
     # @param account_id [String] Account ID
     # @param [Hash] opts the optional parameters
-    # @return [Array<(GetAnalytics200Response, Integer, Hash)>] GetAnalytics200Response data, response status code and response headers
-    def get_analytics_with_http_info(account_provider, account_id, opts = {})
+    # @return [Array<(Analytics, Integer, Hash)>] Analytics data, response status code and response headers
+    def get_account_analytics_with_http_info(account_provider, account_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AnalyticsApi.get_analytics ...'
+        @api_client.config.logger.debug 'Calling API: AnalyticsApi.get_account_analytics ...'
       end
       # verify the required parameter 'account_provider' is set
       if @api_client.config.client_side_validation && account_provider.nil?
-        fail ArgumentError, "Missing the required parameter 'account_provider' when calling AnalyticsApi.get_analytics"
+        fail ArgumentError, "Missing the required parameter 'account_provider' when calling AnalyticsApi.get_account_analytics"
       end
       # verify the required parameter 'account_id' is set
       if @api_client.config.client_side_validation && account_id.nil?
-        fail ArgumentError, "Missing the required parameter 'account_id' when calling AnalyticsApi.get_analytics"
+        fail ArgumentError, "Missing the required parameter 'account_id' when calling AnalyticsApi.get_account_analytics"
       end
       # resource path
       local_var_path = '/v1/analytics/{account_provider}/account/{account_id}/stats'.sub('{' + 'account_provider' + '}', CGI.escape(account_provider.to_s)).sub('{' + 'account_id' + '}', CGI.escape(account_id.to_s))
@@ -66,13 +66,13 @@ module Blockmate
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetAnalytics200Response'
+      return_type = opts[:debug_return_type] || 'Analytics'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['UserJWT']
 
       new_options = opts.merge(
-        :operation => :"AnalyticsApi.get_analytics",
+        :operation => :"AnalyticsApi.get_account_analytics",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -83,7 +83,184 @@ module Blockmate
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AnalyticsApi#get_analytics\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: AnalyticsApi#get_account_analytics\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get analytics focused on gaming for whole project
+    # Get analytics focused on gaming for whole project. All empty values are omitted from the response. Values are recalculated once per day.
+    # @param [Hash] opts the optional parameters
+    # @return [Hash<String, Analytics>]
+    def get_project_analytics(opts = {})
+      data, _status_code, _headers = get_project_analytics_with_http_info(opts)
+      data
+    end
+
+    # Get analytics focused on gaming for whole project
+    # Get analytics focused on gaming for whole project. All empty values are omitted from the response. Values are recalculated once per day.
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Hash<String, Analytics>, Integer, Hash)>] Hash<String, Analytics> data, response status code and response headers
+    def get_project_analytics_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: AnalyticsApi.get_project_analytics ...'
+      end
+      # resource path
+      local_var_path = '/v1/analytics/project/stats'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'Hash<String, Analytics>'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['UserJWT']
+
+      new_options = opts.merge(
+        :operation => :"AnalyticsApi.get_project_analytics",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AnalyticsApi#get_project_analytics\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get analytics focused on gaming for specified provider
+    # Get analytics focused on gaming for specified provider. All empty values are omitted from the response. Values are recalculated once per day.
+    # @param account_provider [String] URL value from account_providers method
+    # @param [Hash] opts the optional parameters
+    # @return [Hash<String, Analytics>]
+    def get_provider_analytics(account_provider, opts = {})
+      data, _status_code, _headers = get_provider_analytics_with_http_info(account_provider, opts)
+      data
+    end
+
+    # Get analytics focused on gaming for specified provider
+    # Get analytics focused on gaming for specified provider. All empty values are omitted from the response. Values are recalculated once per day.
+    # @param account_provider [String] URL value from account_providers method
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Hash<String, Analytics>, Integer, Hash)>] Hash<String, Analytics> data, response status code and response headers
+    def get_provider_analytics_with_http_info(account_provider, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: AnalyticsApi.get_provider_analytics ...'
+      end
+      # verify the required parameter 'account_provider' is set
+      if @api_client.config.client_side_validation && account_provider.nil?
+        fail ArgumentError, "Missing the required parameter 'account_provider' when calling AnalyticsApi.get_provider_analytics"
+      end
+      # resource path
+      local_var_path = '/v1/analytics/{account_provider}/stats'.sub('{' + 'account_provider' + '}', CGI.escape(account_provider.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'Hash<String, Analytics>'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['UserJWT']
+
+      new_options = opts.merge(
+        :operation => :"AnalyticsApi.get_provider_analytics",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AnalyticsApi#get_provider_analytics\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get analytics focused on gaming for this user
+    # Get analytics focused on gaming for this user. All empty values are omitted from the response. Values are recalculated once per day.
+    # @param [Hash] opts the optional parameters
+    # @return [Hash<String, Analytics>]
+    def get_user_analytics(opts = {})
+      data, _status_code, _headers = get_user_analytics_with_http_info(opts)
+      data
+    end
+
+    # Get analytics focused on gaming for this user
+    # Get analytics focused on gaming for this user. All empty values are omitted from the response. Values are recalculated once per day.
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Hash<String, Analytics>, Integer, Hash)>] Hash<String, Analytics> data, response status code and response headers
+    def get_user_analytics_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: AnalyticsApi.get_user_analytics ...'
+      end
+      # resource path
+      local_var_path = '/v1/analytics/user/stats'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'Hash<String, Analytics>'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['UserJWT']
+
+      new_options = opts.merge(
+        :operation => :"AnalyticsApi.get_user_analytics",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AnalyticsApi#get_user_analytics\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

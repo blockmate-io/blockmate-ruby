@@ -17,6 +17,8 @@ docs/AddressRiskReport.md
 docs/AddressRiskReportDetails.md
 docs/AggregatedInfoApi.md
 docs/Amount.md
+docs/Analytics.md
+docs/Analytics1.md
 docs/AnalyticsApi.md
 docs/AuthUser200Response.md
 docs/AuthenticationApi.md
@@ -42,8 +44,6 @@ docs/GetAccountHint404Response.md
 docs/GetAddressFromDomain200Response.md
 docs/GetAddressNameInfoSingle200Response.md
 docs/GetAddressRiskScore200Response.md
-docs/GetAnalytics200Response.md
-docs/GetAnalytics200ResponseValue.md
 docs/GetDomainFromAddress200Response.md
 docs/GetDomainFromAddress200ResponseMetadata.md
 docs/GetDomainFromAddress200ResponseMetadataAttributesInner.md
@@ -95,6 +95,8 @@ lib/blockmate/models/account_provider_hint_fields.rb
 lib/blockmate/models/address_risk_report.rb
 lib/blockmate/models/address_risk_report_details.rb
 lib/blockmate/models/amount.rb
+lib/blockmate/models/analytics.rb
+lib/blockmate/models/analytics1.rb
 lib/blockmate/models/auth_user200_response.rb
 lib/blockmate/models/balance200_response.rb
 lib/blockmate/models/balance_response.rb
@@ -116,8 +118,6 @@ lib/blockmate/models/get_account_hint404_response.rb
 lib/blockmate/models/get_address_from_domain200_response.rb
 lib/blockmate/models/get_address_name_info_single200_response.rb
 lib/blockmate/models/get_address_risk_score200_response.rb
-lib/blockmate/models/get_analytics200_response.rb
-lib/blockmate/models/get_analytics200_response_value.rb
 lib/blockmate/models/get_domain_from_address200_response.rb
 lib/blockmate/models/get_domain_from_address200_response_metadata.rb
 lib/blockmate/models/get_domain_from_address200_response_metadata_attributes_inner.rb

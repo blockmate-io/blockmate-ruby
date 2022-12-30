@@ -97,7 +97,10 @@ Class | Method | HTTP request | Description
 *Blockmate::AggregatedInfoApi* | [**balance**](docs/AggregatedInfoApi.md#balance) | **GET** /v1/aggregate/balance | Get balance
 *Blockmate::AggregatedInfoApi* | [**n_ft_metadata**](docs/AggregatedInfoApi.md#n_ft_metadata) | **GET** /v1/aggregate/nft_metadata | Get NFT metadata
 *Blockmate::AggregatedInfoApi* | [**transactions**](docs/AggregatedInfoApi.md#transactions) | **GET** /v1/aggregate/transactions | Get transactions
-*Blockmate::AnalyticsApi* | [**get_analytics**](docs/AnalyticsApi.md#get_analytics) | **GET** /v1/analytics/{account_provider}/account/{account_id}/stats | Get analytics focused on gaming
+*Blockmate::AnalyticsApi* | [**get_account_analytics**](docs/AnalyticsApi.md#get_account_analytics) | **GET** /v1/analytics/{account_provider}/account/{account_id}/stats | Get analytics focused on gaming for specified account and provider
+*Blockmate::AnalyticsApi* | [**get_project_analytics**](docs/AnalyticsApi.md#get_project_analytics) | **GET** /v1/analytics/project/stats | Get analytics focused on gaming for whole project
+*Blockmate::AnalyticsApi* | [**get_provider_analytics**](docs/AnalyticsApi.md#get_provider_analytics) | **GET** /v1/analytics/{account_provider}/stats | Get analytics focused on gaming for specified provider
+*Blockmate::AnalyticsApi* | [**get_user_analytics**](docs/AnalyticsApi.md#get_user_analytics) | **GET** /v1/analytics/user/stats | Get analytics focused on gaming for this user
 *Blockmate::AuthenticationApi* | [**user_api_authenticate_developer**](docs/AuthenticationApi.md#user_api_authenticate_developer) | **GET** /v1/auth/developer | Authenticate developer
 *Blockmate::AuthenticationApi* | [**user_api_authenticate_project**](docs/AuthenticationApi.md#user_api_authenticate_project) | **GET** /v1/auth | Authenticate project
 *Blockmate::ENSApi* | [**get_address_from_domain**](docs/ENSApi.md#get_address_from_domain) | **GET** /v1/ens/addressFromDomain | Get address for specified ENS domain
@@ -127,6 +130,8 @@ Class | Method | HTTP request | Description
  - [Blockmate::AddressRiskReport](docs/AddressRiskReport.md)
  - [Blockmate::AddressRiskReportDetails](docs/AddressRiskReportDetails.md)
  - [Blockmate::Amount](docs/Amount.md)
+ - [Blockmate::Analytics](docs/Analytics.md)
+ - [Blockmate::Analytics1](docs/Analytics1.md)
  - [Blockmate::AuthUser200Response](docs/AuthUser200Response.md)
  - [Blockmate::Balance200Response](docs/Balance200Response.md)
  - [Blockmate::BalanceResponse](docs/BalanceResponse.md)
@@ -148,8 +153,6 @@ Class | Method | HTTP request | Description
  - [Blockmate::GetAddressFromDomain200Response](docs/GetAddressFromDomain200Response.md)
  - [Blockmate::GetAddressNameInfoSingle200Response](docs/GetAddressNameInfoSingle200Response.md)
  - [Blockmate::GetAddressRiskScore200Response](docs/GetAddressRiskScore200Response.md)
- - [Blockmate::GetAnalytics200Response](docs/GetAnalytics200Response.md)
- - [Blockmate::GetAnalytics200ResponseValue](docs/GetAnalytics200ResponseValue.md)
  - [Blockmate::GetDomainFromAddress200Response](docs/GetDomainFromAddress200Response.md)
  - [Blockmate::GetDomainFromAddress200ResponseMetadata](docs/GetDomainFromAddress200ResponseMetadata.md)
  - [Blockmate::GetDomainFromAddress200ResponseMetadataAttributesInner](docs/GetDomainFromAddress200ResponseMetadataAttributesInner.md)
