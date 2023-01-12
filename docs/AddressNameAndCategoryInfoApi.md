@@ -10,7 +10,7 @@ All URIs are relative to *https://api.blockmate.io*
 
 ## get_address_name_info_multi
 
-> <Hash<String, GetAddressNameInfoSingle200Response>> get_address_name_info_multi(chain, opts)
+> <Hash<String, GetAddressNameInfoMulti200ResponseValue>> get_address_name_info_multi(chain, opts)
 
 Get address name and category info for multiple addresses
 
@@ -21,6 +21,9 @@ require 'time'
 require 'blockmate'
 # setup authorization
 Blockmate.configure do |config|
+  # Configure Bearer authorization (JWT): ProjectJWT
+  config.access_token = 'YOUR_BEARER_TOKEN'
+
   # Configure Bearer authorization (JWT): UserJWT
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
@@ -28,7 +31,7 @@ end
 api_instance = Blockmate::AddressNameAndCategoryInfoApi.new
 chain = 'btc' # String | Blockchain identifier
 opts = {
-  request_body: ['bc1qjl7k0dpcsw3djmzq25qv6peavgxysq95pcduuq'] # Array<String> | OK
+  request_body: ['bc1qjl7k0dpcsw3djmzq25qv6peavgxysq95pcduuq'] # Array<String> | Addresses for which name and category should be returned (maximum of 5000 in one request)
 }
 
 begin
@@ -44,7 +47,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Hash<String, GetAddressNameInfoSingle200Response>>, Integer, Hash)> get_address_name_info_multi_with_http_info(chain, opts)
+> <Array(<Hash<String, GetAddressNameInfoMulti200ResponseValue>>, Integer, Hash)> get_address_name_info_multi_with_http_info(chain, opts)
 
 ```ruby
 begin
@@ -52,7 +55,7 @@ begin
   data, status_code, headers = api_instance.get_address_name_info_multi_with_http_info(chain, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Hash<String, GetAddressNameInfoSingle200Response>>
+  p data # => <Hash<String, GetAddressNameInfoMulti200ResponseValue>>
 rescue Blockmate::ApiError => e
   puts "Error when calling AddressNameAndCategoryInfoApi->get_address_name_info_multi_with_http_info: #{e}"
 end
@@ -63,15 +66,15 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **chain** | **String** | Blockchain identifier |  |
-| **request_body** | [**Array&lt;String&gt;**](String.md) | OK | [optional] |
+| **request_body** | [**Array&lt;String&gt;**](String.md) | Addresses for which name and category should be returned (maximum of 5000 in one request) | [optional] |
 
 ### Return type
 
-[**Hash&lt;String, GetAddressNameInfoSingle200Response&gt;**](GetAddressNameInfoSingle200Response.md)
+[**Hash&lt;String, GetAddressNameInfoMulti200ResponseValue&gt;**](GetAddressNameInfoMulti200ResponseValue.md)
 
 ### Authorization
 
-[UserJWT](../README.md#UserJWT)
+[ProjectJWT](../README.md#ProjectJWT), [UserJWT](../README.md#UserJWT)
 
 ### HTTP request headers
 
@@ -92,6 +95,9 @@ require 'time'
 require 'blockmate'
 # setup authorization
 Blockmate.configure do |config|
+  # Configure Bearer authorization (JWT): ProjectJWT
+  config.access_token = 'YOUR_BEARER_TOKEN'
+
   # Configure Bearer authorization (JWT): UserJWT
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
@@ -140,7 +146,7 @@ end
 
 ### Authorization
 
-[UserJWT](../README.md#UserJWT)
+[ProjectJWT](../README.md#ProjectJWT), [UserJWT](../README.md#UserJWT)
 
 ### HTTP request headers
 

@@ -14,7 +14,7 @@ All URIs are relative to *https://api.blockmate.io*
 
 ## account_provider_hints_list
 
-> <AccountProviderHint> account_provider_hints_list
+> <Array<AccountProviderHint>> account_provider_hints_list
 
 Get list of account providers hints
 
@@ -44,7 +44,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<AccountProviderHint>, Integer, Hash)> account_provider_hints_list_with_http_info
+> <Array(<Array<AccountProviderHint>>, Integer, Hash)> account_provider_hints_list_with_http_info
 
 ```ruby
 begin
@@ -52,7 +52,7 @@ begin
   data, status_code, headers = api_instance.account_provider_hints_list_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <AccountProviderHint>
+  p data # => <Array<AccountProviderHint>>
 rescue Blockmate::ApiError => e
   puts "Error when calling AggregatedInfoApi->account_provider_hints_list_with_http_info: #{e}"
 end
@@ -64,7 +64,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**AccountProviderHint**](AccountProviderHint.md)
+[**Array&lt;AccountProviderHint&gt;**](AccountProviderHint.md)
 
 ### Authorization
 
@@ -78,7 +78,7 @@ This endpoint does not need any parameter.
 
 ## account_providers_list
 
-> <AccountProvider> account_providers_list
+> <Array<AccountProvider>> account_providers_list
 
 Get list of account providers
 
@@ -108,7 +108,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<AccountProvider>, Integer, Hash)> account_providers_list_with_http_info
+> <Array(<Array<AccountProvider>>, Integer, Hash)> account_providers_list_with_http_info
 
 ```ruby
 begin
@@ -116,7 +116,7 @@ begin
   data, status_code, headers = api_instance.account_providers_list_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <AccountProvider>
+  p data # => <Array<AccountProvider>>
 rescue Blockmate::ApiError => e
   puts "Error when calling AggregatedInfoApi->account_providers_list_with_http_info: #{e}"
 end
@@ -128,7 +128,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**AccountProvider**](AccountProvider.md)
+[**Array&lt;AccountProvider&gt;**](AccountProvider.md)
 
 ### Authorization
 
@@ -223,7 +223,8 @@ end
 
 api_instance = Blockmate::AggregatedInfoApi.new
 opts = {
-  currency: 'USD' # String | Currency to convert to. 
+  currency: 'USD', # String | Currency to convert to. 
+  account_filter: '497f6eca-6276-4993-bfeb-53cbbbba6f08' # String | Filter results to only provided account. When omitted, it returns all transactions from all accounts. 
 }
 
 begin
@@ -258,6 +259,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **currency** | **String** | Currency to convert to.  | [optional] |
+| **account_filter** | **String** | Filter results to only provided account. When omitted, it returns all transactions from all accounts.  | [optional] |
 
 ### Return type
 

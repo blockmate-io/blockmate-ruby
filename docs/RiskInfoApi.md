@@ -7,6 +7,7 @@ All URIs are relative to *https://api.blockmate.io*
 | [**get_address_risk_score**](RiskInfoApi.md#get_address_risk_score) | **GET** /v1/risk/score | Get address risk score |
 | [**get_address_risk_score_case**](RiskInfoApi.md#get_address_risk_score_case) | **GET** /v1/risk/score/details/{case_id} | Get address risk score case |
 | [**get_address_risk_score_details**](RiskInfoApi.md#get_address_risk_score_details) | **GET** /v1/risk/score/details | Get address risk score details |
+| [**get_multiple_address_risk_score**](RiskInfoApi.md#get_multiple_address_risk_score) | **POST** /v1/risk/score | Get multiple risk scores for addresses |
 | [**get_transaction_risk_score**](RiskInfoApi.md#get_transaction_risk_score) | **GET** /v1/risk/transaction/score | Get transaction risk score |
 | [**get_transaction_risk_score_case**](RiskInfoApi.md#get_transaction_risk_score_case) | **GET** /v1/risk/transaction/score/details/{case_id} | Get transaction risk score case |
 | [**get_transaction_risk_score_details**](RiskInfoApi.md#get_transaction_risk_score_details) | **GET** /v1/risk/transaction/score/details | Get transaction risk score details |
@@ -25,6 +26,9 @@ require 'time'
 require 'blockmate'
 # setup authorization
 Blockmate.configure do |config|
+  # Configure Bearer authorization (JWT): ProjectJWT
+  config.access_token = 'YOUR_BEARER_TOKEN'
+
   # Configure Bearer authorization (JWT): UserJWT
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
@@ -75,7 +79,7 @@ end
 
 ### Authorization
 
-[UserJWT](../README.md#UserJWT)
+[ProjectJWT](../README.md#ProjectJWT), [UserJWT](../README.md#UserJWT)
 
 ### HTTP request headers
 
@@ -96,6 +100,9 @@ require 'time'
 require 'blockmate'
 # setup authorization
 Blockmate.configure do |config|
+  # Configure Bearer authorization (JWT): ProjectJWT
+  config.access_token = 'YOUR_BEARER_TOKEN'
+
   # Configure Bearer authorization (JWT): UserJWT
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
@@ -142,7 +149,7 @@ end
 
 ### Authorization
 
-[UserJWT](../README.md#UserJWT)
+[ProjectJWT](../README.md#ProjectJWT), [UserJWT](../README.md#UserJWT)
 
 ### HTTP request headers
 
@@ -163,6 +170,9 @@ require 'time'
 require 'blockmate'
 # setup authorization
 Blockmate.configure do |config|
+  # Configure Bearer authorization (JWT): ProjectJWT
+  config.access_token = 'YOUR_BEARER_TOKEN'
+
   # Configure Bearer authorization (JWT): UserJWT
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
@@ -213,11 +223,85 @@ end
 
 ### Authorization
 
-[UserJWT](../README.md#UserJWT)
+[ProjectJWT](../README.md#ProjectJWT), [UserJWT](../README.md#UserJWT)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_multiple_address_risk_score
+
+> Hash&lt;String, Integer&gt; get_multiple_address_risk_score(opts)
+
+Get multiple risk scores for addresses
+
+### Examples
+
+```ruby
+require 'time'
+require 'blockmate'
+# setup authorization
+Blockmate.configure do |config|
+  # Configure Bearer authorization (JWT): ProjectJWT
+  config.access_token = 'YOUR_BEARER_TOKEN'
+
+  # Configure Bearer authorization (JWT): UserJWT
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = Blockmate::RiskInfoApi.new
+opts = {
+  chain: 'btc', # String | Blockchain identifier
+  request_body: ['bc1qjl7k0dpcsw3djmzq25qv6peavgxysq95pcduuq'] # Array<String> | Addresses for which risk should be returned (maximum of 5000 in one request)
+}
+
+begin
+  # Get multiple risk scores for addresses
+  result = api_instance.get_multiple_address_risk_score(opts)
+  p result
+rescue Blockmate::ApiError => e
+  puts "Error when calling RiskInfoApi->get_multiple_address_risk_score: #{e}"
+end
+```
+
+#### Using the get_multiple_address_risk_score_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(Hash&lt;String, Integer&gt;, Integer, Hash)> get_multiple_address_risk_score_with_http_info(opts)
+
+```ruby
+begin
+  # Get multiple risk scores for addresses
+  data, status_code, headers = api_instance.get_multiple_address_risk_score_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => Hash&lt;String, Integer&gt;
+rescue Blockmate::ApiError => e
+  puts "Error when calling RiskInfoApi->get_multiple_address_risk_score_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **chain** | **String** | Blockchain identifier | [optional] |
+| **request_body** | [**Array&lt;String&gt;**](String.md) | Addresses for which risk should be returned (maximum of 5000 in one request) | [optional] |
+
+### Return type
+
+**Hash&lt;String, Integer&gt;**
+
+### Authorization
+
+[ProjectJWT](../README.md#ProjectJWT), [UserJWT](../README.md#UserJWT)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -234,6 +318,9 @@ require 'time'
 require 'blockmate'
 # setup authorization
 Blockmate.configure do |config|
+  # Configure Bearer authorization (JWT): ProjectJWT
+  config.access_token = 'YOUR_BEARER_TOKEN'
+
   # Configure Bearer authorization (JWT): UserJWT
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
@@ -284,7 +371,7 @@ end
 
 ### Authorization
 
-[UserJWT](../README.md#UserJWT)
+[ProjectJWT](../README.md#ProjectJWT), [UserJWT](../README.md#UserJWT)
 
 ### HTTP request headers
 
@@ -305,6 +392,9 @@ require 'time'
 require 'blockmate'
 # setup authorization
 Blockmate.configure do |config|
+  # Configure Bearer authorization (JWT): ProjectJWT
+  config.access_token = 'YOUR_BEARER_TOKEN'
+
   # Configure Bearer authorization (JWT): UserJWT
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
@@ -351,7 +441,7 @@ end
 
 ### Authorization
 
-[UserJWT](../README.md#UserJWT)
+[ProjectJWT](../README.md#ProjectJWT), [UserJWT](../README.md#UserJWT)
 
 ### HTTP request headers
 
@@ -372,6 +462,9 @@ require 'time'
 require 'blockmate'
 # setup authorization
 Blockmate.configure do |config|
+  # Configure Bearer authorization (JWT): ProjectJWT
+  config.access_token = 'YOUR_BEARER_TOKEN'
+
   # Configure Bearer authorization (JWT): UserJWT
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
@@ -422,7 +515,7 @@ end
 
 ### Authorization
 
-[UserJWT](../README.md#UserJWT)
+[ProjectJWT](../README.md#ProjectJWT), [UserJWT](../README.md#UserJWT)
 
 ### HTTP request headers
 

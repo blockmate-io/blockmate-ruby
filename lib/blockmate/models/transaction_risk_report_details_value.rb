@@ -14,26 +14,16 @@ require 'date'
 require 'time'
 
 module Blockmate
-  class NftContractMetadata
-    # String - NFT contract name.
-    attr_accessor :name
+  class TransactionRiskReportDetailsValue
+    attr_accessor :own_categories
 
-    # String - NFT contract symbol abbreviation.
-    attr_accessor :symbol
-
-    # String - Total number of NFTs in a given NFT collection.
-    attr_accessor :total_supply
-
-    # String - 'ERC721' or 'ERC1155'
-    attr_accessor :token_type
+    attr_accessor :source_of_funds_categories
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'name' => :'name',
-        :'symbol' => :'symbol',
-        :'total_supply' => :'totalSupply',
-        :'token_type' => :'tokenType'
+        :'own_categories' => :'own_categories',
+        :'source_of_funds_categories' => :'source_of_funds_categories'
       }
     end
 
@@ -45,10 +35,8 @@ module Blockmate
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'name' => :'String',
-        :'symbol' => :'String',
-        :'total_supply' => :'String',
-        :'token_type' => :'String'
+        :'own_categories' => :'Array<RiskReportCategory>',
+        :'source_of_funds_categories' => :'Array<RiskReportCategory>'
       }
     end
 
@@ -62,31 +50,27 @@ module Blockmate
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Blockmate::NftContractMetadata` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Blockmate::TransactionRiskReportDetailsValue` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Blockmate::NftContractMetadata`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Blockmate::TransactionRiskReportDetailsValue`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'name')
-        self.name = attributes[:'name']
+      if attributes.key?(:'own_categories')
+        if (value = attributes[:'own_categories']).is_a?(Array)
+          self.own_categories = value
+        end
       end
 
-      if attributes.key?(:'symbol')
-        self.symbol = attributes[:'symbol']
-      end
-
-      if attributes.key?(:'total_supply')
-        self.total_supply = attributes[:'total_supply']
-      end
-
-      if attributes.key?(:'token_type')
-        self.token_type = attributes[:'token_type']
+      if attributes.key?(:'source_of_funds_categories')
+        if (value = attributes[:'source_of_funds_categories']).is_a?(Array)
+          self.source_of_funds_categories = value
+        end
       end
     end
 
@@ -108,10 +92,8 @@ module Blockmate
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          name == o.name &&
-          symbol == o.symbol &&
-          total_supply == o.total_supply &&
-          token_type == o.token_type
+          own_categories == o.own_categories &&
+          source_of_funds_categories == o.source_of_funds_categories
     end
 
     # @see the `==` method
@@ -123,7 +105,7 @@ module Blockmate
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, symbol, total_supply, token_type].hash
+      [own_categories, source_of_funds_categories].hash
     end
 
     # Builds the object from hash

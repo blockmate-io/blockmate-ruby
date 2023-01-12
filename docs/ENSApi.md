@@ -21,6 +21,9 @@ require 'time'
 require 'blockmate'
 # setup authorization
 Blockmate.configure do |config|
+  # Configure Bearer authorization (JWT): ProjectJWT
+  config.access_token = 'YOUR_BEARER_TOKEN'
+
   # Configure Bearer authorization (JWT): UserJWT
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
@@ -67,7 +70,7 @@ end
 
 ### Authorization
 
-[UserJWT](../README.md#UserJWT)
+[ProjectJWT](../README.md#ProjectJWT), [UserJWT](../README.md#UserJWT)
 
 ### HTTP request headers
 
@@ -88,6 +91,9 @@ require 'time'
 require 'blockmate'
 # setup authorization
 Blockmate.configure do |config|
+  # Configure Bearer authorization (JWT): ProjectJWT
+  config.access_token = 'YOUR_BEARER_TOKEN'
+
   # Configure Bearer authorization (JWT): UserJWT
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
@@ -134,7 +140,7 @@ end
 
 ### Authorization
 
-[UserJWT](../README.md#UserJWT)
+[ProjectJWT](../README.md#ProjectJWT), [UserJWT](../README.md#UserJWT)
 
 ### HTTP request headers
 

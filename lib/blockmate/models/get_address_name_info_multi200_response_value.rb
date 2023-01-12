@@ -14,26 +14,16 @@ require 'date'
 require 'time'
 
 module Blockmate
-  class NftContractMetadata
-    # String - NFT contract name.
+  class GetAddressNameInfoMulti200ResponseValue
     attr_accessor :name
 
-    # String - NFT contract symbol abbreviation.
-    attr_accessor :symbol
-
-    # String - Total number of NFTs in a given NFT collection.
-    attr_accessor :total_supply
-
-    # String - 'ERC721' or 'ERC1155'
-    attr_accessor :token_type
+    attr_accessor :category
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'name' => :'name',
-        :'symbol' => :'symbol',
-        :'total_supply' => :'totalSupply',
-        :'token_type' => :'tokenType'
+        :'category' => :'category'
       }
     end
 
@@ -46,9 +36,7 @@ module Blockmate
     def self.openapi_types
       {
         :'name' => :'String',
-        :'symbol' => :'String',
-        :'total_supply' => :'String',
-        :'token_type' => :'String'
+        :'category' => :'String'
       }
     end
 
@@ -62,13 +50,13 @@ module Blockmate
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Blockmate::NftContractMetadata` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Blockmate::GetAddressNameInfoMulti200ResponseValue` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Blockmate::NftContractMetadata`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Blockmate::GetAddressNameInfoMulti200ResponseValue`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -77,16 +65,8 @@ module Blockmate
         self.name = attributes[:'name']
       end
 
-      if attributes.key?(:'symbol')
-        self.symbol = attributes[:'symbol']
-      end
-
-      if attributes.key?(:'total_supply')
-        self.total_supply = attributes[:'total_supply']
-      end
-
-      if attributes.key?(:'token_type')
-        self.token_type = attributes[:'token_type']
+      if attributes.key?(:'category')
+        self.category = attributes[:'category']
       end
     end
 
@@ -109,9 +89,7 @@ module Blockmate
       return true if self.equal?(o)
       self.class == o.class &&
           name == o.name &&
-          symbol == o.symbol &&
-          total_supply == o.total_supply &&
-          token_type == o.token_type
+          category == o.category
     end
 
     # @see the `==` method
@@ -123,7 +101,7 @@ module Blockmate
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, symbol, total_supply, token_type].hash
+      [name, category].hash
     end
 
     # Builds the object from hash

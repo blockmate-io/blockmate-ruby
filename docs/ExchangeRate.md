@@ -14,7 +14,7 @@
 require 'blockmate'
 
 instance = Blockmate::ExchangeRate.new(
-  currency_pair: ETH/USD,
+  currency_pair: eth/usd,
   date: 2022-06-30,
   rate: 1053.9613
 )

@@ -21,12 +21,15 @@ require 'time'
 require 'blockmate'
 # setup authorization
 Blockmate.configure do |config|
+  # Configure Bearer authorization (JWT): ProjectJWT
+  config.access_token = 'YOUR_BEARER_TOKEN'
+
   # Configure Bearer authorization (JWT): UserJWT
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Blockmate::ExchangeRateInfoApi.new
-pairs = 'ETH/USD,BTC/EUR' # String | Currency pairs for which exchange rate should be returned
+pairs = 'ETH/USD,BTC/EUR' # String | Currency pairs for which exchange rate should be returned (max 20 per request)
 
 begin
   # Get current exchange rate
@@ -59,7 +62,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **pairs** | **String** | Currency pairs for which exchange rate should be returned |  |
+| **pairs** | **String** | Currency pairs for which exchange rate should be returned (max 20 per request) |  |
 
 ### Return type
 
@@ -67,7 +70,7 @@ end
 
 ### Authorization
 
-[UserJWT](../README.md#UserJWT)
+[ProjectJWT](../README.md#ProjectJWT), [UserJWT](../README.md#UserJWT)
 
 ### HTTP request headers
 
@@ -88,13 +91,16 @@ require 'time'
 require 'blockmate'
 # setup authorization
 Blockmate.configure do |config|
+  # Configure Bearer authorization (JWT): ProjectJWT
+  config.access_token = 'YOUR_BEARER_TOKEN'
+
   # Configure Bearer authorization (JWT): UserJWT
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
 api_instance = Blockmate::ExchangeRateInfoApi.new
 pair = 'ETH/USD' # String | Currency pair for which exchange rates should be returned
-days = '2022-06-30,2022-06-29' # String | Historical dates for which exchange rates should be returned
+days = '2022-06-30,2022-06-29' # String | Historical dates for which exchange rates should be returned (max 40 per request)
 
 begin
   # Get historical exchange rate
@@ -128,7 +134,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pair** | **String** | Currency pair for which exchange rates should be returned |  |
-| **days** | **String** | Historical dates for which exchange rates should be returned |  |
+| **days** | **String** | Historical dates for which exchange rates should be returned (max 40 per request) |  |
 
 ### Return type
 
@@ -136,7 +142,7 @@ end
 
 ### Authorization
 
-[UserJWT](../README.md#UserJWT)
+[ProjectJWT](../README.md#ProjectJWT), [UserJWT](../README.md#UserJWT)
 
 ### HTTP request headers
 

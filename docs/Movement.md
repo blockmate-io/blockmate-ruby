@@ -13,6 +13,10 @@
 | **fee** | **Boolean** |  |  |
 | **image_name** | **String** |  | [optional] |
 | **image_url** | **String** |  | [optional] |
+| **converted_currency** | **String** |  | [optional] |
+| **converted_value** | **Float** |  | [optional] |
+| **name** | **String** | name if known | [optional] |
+| **category** | **String** | category if known | [optional] |
 
 ## Example
 
@@ -28,7 +32,11 @@ instance = Blockmate::Movement.new(
   owned: true,
   fee: false,
   image_name: Alvibop,
-  image_url: https://storage.googleapis.com/starly-prod.appspot.com/users/07SXODs3nHWOc0udxtCA7hU9KgR2/collections/pSYegq3aubUCodcy1t4u/cards/16/converted_cover1632338824700_600x800.mp4
+  image_url: https://storage.googleapis.com/starly-prod.appspot.com/users/07SXODs3nHWOc0udxtCA7hU9KgR2/collections/pSYegq3aubUCodcy1t4u/cards/16/converted_cover1632338824700_600x800.mp4,
+  converted_currency: USD,
+  converted_value: 1.2,
+  name: null,
+  category: exchange
 )
 ```
 

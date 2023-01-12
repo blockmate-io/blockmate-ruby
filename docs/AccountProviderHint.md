@@ -12,6 +12,7 @@
 | **intro** | **String** |  | [optional] |
 | **fields** | [**AccountProviderHintFields**](AccountProviderHintFields.md) |  |  |
 | **oauth** | **Boolean** |  |  |
+| **icon** | **String** |  |  |
 
 ## Example
 
@@ -26,7 +27,8 @@ instance = Blockmate::AccountProviderHint.new(
   url: https://bitcoin.com,
   intro: Use your address to connect your account.,
   fields: null,
-  oauth: false
+  oauth: false,
+  icon: https://api.blockmate.io/v1/onchain/static/bitcoin.png
 )
 ```
 

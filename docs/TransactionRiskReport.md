@@ -10,7 +10,7 @@
 | **transaction** | **String** |  | [optional] |
 | **chain** | **String** |  |  |
 | **risk** | **Integer** |  |  |
-| **details** | [**Hash&lt;String, AddressRiskReportDetails&gt;**](AddressRiskReportDetails.md) | Keys are addresses from transaction inputs or outputs |  |
+| **details** | [**Hash&lt;String, TransactionRiskReportDetailsValue&gt;**](TransactionRiskReportDetailsValue.md) | Keys are addresses from transaction inputs or outputs |  |
 
 ## Example
 

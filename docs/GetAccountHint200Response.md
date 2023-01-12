@@ -9,6 +9,7 @@
 | **intro** | **String** |  |  |
 | **fields** | [**GetAccountHint200ResponseFields**](GetAccountHint200ResponseFields.md) |  |  |
 | **oauth** | **Boolean** |  |  |
+| **icon** | **String** |  | [optional] |
 
 ## Example
 
@@ -20,7 +21,8 @@ instance = Blockmate::GetAccountHint200Response.new(
   url: some-url,
   intro: Use your address to connect your account.,
   fields: null,
-  oauth: false
+  oauth: false,
+  icon: https://api.blockmate.io/v1/onchain/static/bitcoin.png
 )
 ```
 

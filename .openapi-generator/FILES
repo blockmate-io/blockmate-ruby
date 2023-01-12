@@ -11,7 +11,6 @@ docs/Account.md
 docs/AccountProvider.md
 docs/AccountProviderHint.md
 docs/AccountProviderHintFields.md
-docs/AccountProviderInfoApi.md
 docs/AddressNameAndCategoryInfoApi.md
 docs/AddressRiskReport.md
 docs/AddressRiskReportDetails.md
@@ -42,6 +41,7 @@ docs/GetAccountHint200ResponseFields.md
 docs/GetAccountHint403Response.md
 docs/GetAccountHint404Response.md
 docs/GetAddressFromDomain200Response.md
+docs/GetAddressNameInfoMulti200ResponseValue.md
 docs/GetAddressNameInfoSingle200Response.md
 docs/GetAddressRiskScore200Response.md
 docs/GetDomainFromAddress200Response.md
@@ -67,16 +67,17 @@ docs/RiskInfoApi.md
 docs/RiskReportCategory.md
 docs/Transaction.md
 docs/TransactionRiskReport.md
+docs/TransactionRiskReportDetailsValue.md
 docs/Transactions200Response.md
 docs/Transactions200ResponseAccountsInner.md
 docs/User.md
 docs/UserAPIAuthenticateProject200Response.md
 docs/UserAPIAuthenticateProject400Response.md
 docs/UserAPIAuthenticateProject401Response.md
+docs/UserAccountManagementApi.md
 docs/UserManagementApi.md
 git_push.sh
 lib/blockmate.rb
-lib/blockmate/api/account_provider_info_api.rb
 lib/blockmate/api/address_name_and_category_info_api.rb
 lib/blockmate/api/aggregated_info_api.rb
 lib/blockmate/api/analytics_api.rb
@@ -84,6 +85,7 @@ lib/blockmate/api/authentication_api.rb
 lib/blockmate/api/ens_api.rb
 lib/blockmate/api/exchange_rate_info_api.rb
 lib/blockmate/api/risk_info_api.rb
+lib/blockmate/api/user_account_management_api.rb
 lib/blockmate/api/user_management_api.rb
 lib/blockmate/api_client.rb
 lib/blockmate/api_error.rb
@@ -116,6 +118,7 @@ lib/blockmate/models/get_account_hint200_response_fields.rb
 lib/blockmate/models/get_account_hint403_response.rb
 lib/blockmate/models/get_account_hint404_response.rb
 lib/blockmate/models/get_address_from_domain200_response.rb
+lib/blockmate/models/get_address_name_info_multi200_response_value.rb
 lib/blockmate/models/get_address_name_info_single200_response.rb
 lib/blockmate/models/get_address_risk_score200_response.rb
 lib/blockmate/models/get_domain_from_address200_response.rb
@@ -140,6 +143,7 @@ lib/blockmate/models/owned_nft_media.rb
 lib/blockmate/models/risk_report_category.rb
 lib/blockmate/models/transaction.rb
 lib/blockmate/models/transaction_risk_report.rb
+lib/blockmate/models/transaction_risk_report_details_value.rb
 lib/blockmate/models/transactions200_response.rb
 lib/blockmate/models/transactions200_response_accounts_inner.rb
 lib/blockmate/models/user.rb
