@@ -196,76 +196,76 @@ module Blockmate
     # OUT gambling transactions count during last week
     attr_accessor :count_txs_out_7_gambling
 
-    # Time when first transaction occurred
+    # Unix timestamp when first transaction occurred
     attr_accessor :first_txs_all_onchain
 
-    # Time when first NFT transaction occurred
+    # Unix timestamp when first NFT transaction occurred
     attr_accessor :first_txs_all_nft
 
-    # Time when first gaming transaction occurred
+    # Unix timestamp when first gaming transaction occurred
     attr_accessor :first_txs_all_gaming
 
-    # Time when first gambling transaction occurred
+    # Unix timestamp when first gambling transaction occurred
     attr_accessor :first_txs_all_gambling
 
-    # Time when first IN transaction occurred
+    # Unix timestamp when first IN transaction occurred
     attr_accessor :first_txs_in_onchain
 
-    # Time when first IN NFT transaction occurred
+    # Unix timestamp when first IN NFT transaction occurred
     attr_accessor :first_txs_in_nft
 
-    # Time when first IN gaming transaction occurred
+    # Unix timestamp when first IN gaming transaction occurred
     attr_accessor :first_txs_in_gaming
 
-    # Time when first IN gambling transaction occurred
+    # Unix timestamp when first IN gambling transaction occurred
     attr_accessor :first_txs_in_gambling
 
-    # Time when first OUT transaction occurred
+    # Unix timestamp when first OUT transaction occurred
     attr_accessor :first_txs_out_onchain
 
-    # Time when first OUT NFT transaction occurred
+    # Unix timestamp when first OUT NFT transaction occurred
     attr_accessor :first_txs_out_nft
 
-    # Time when first OUT gaming transaction occurred
+    # Unix timestamp when first OUT gaming transaction occurred
     attr_accessor :first_txs_out_gaming
 
-    # Time when first OUT gambling transaction occurred
+    # Unix timestamp when first OUT gambling transaction occurred
     attr_accessor :first_txs_out_gambling
 
-    # Time when last transaction occurred
+    # Unix timestamp when last transaction occurred
     attr_accessor :last_txs_all_onchain
 
-    # Time when last NFT transaction occurred
+    # Unix timestamp when last NFT transaction occurred
     attr_accessor :last_txs_all_nft
 
-    # Time when last gaming transaction occurred
+    # Unix timestamp when last gaming transaction occurred
     attr_accessor :last_txs_all_gaming
 
-    # Time when last gambling transaction occurred
+    # Unix timestamp when last gambling transaction occurred
     attr_accessor :last_txs_all_gambling
 
-    # Time when last IN transaction occurred
+    # Unix timestamp when last IN transaction occurred
     attr_accessor :last_txs_in_onchain
 
-    # Time when last IN NFT transaction occurred
+    # Unix timestamp when last IN NFT transaction occurred
     attr_accessor :last_txs_in_nft
 
-    # Time when last IN gaming transaction occurred
+    # Unix timestamp when last IN gaming transaction occurred
     attr_accessor :last_txs_in_gaming
 
-    # Time when last IN gambling transaction occurred
+    # Unix timestamp when last IN gambling transaction occurred
     attr_accessor :last_txs_in_gambling
 
-    # Time when last OUT transaction occurred
+    # Unix timestamp when last OUT transaction occurred
     attr_accessor :last_txs_out_onchain
 
-    # Time when last OUT NFT transaction occurred
+    # Unix timestamp when last OUT NFT transaction occurred
     attr_accessor :last_txs_out_nft
 
-    # Time when last OUT gaming transaction occurred
+    # Unix timestamp when last OUT gaming transaction occurred
     attr_accessor :last_txs_out_gaming
 
-    # Time when last OUT gambling transaction occurred
+    # Unix timestamp when last OUT gambling transaction occurred
     attr_accessor :last_txs_out_gambling
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -426,30 +426,30 @@ module Blockmate
         :'count_txs_out_7_nft' => :'Integer',
         :'count_txs_out_7_gaming' => :'Integer',
         :'count_txs_out_7_gambling' => :'Integer',
-        :'first_txs_all_onchain' => :'String',
-        :'first_txs_all_nft' => :'String',
-        :'first_txs_all_gaming' => :'String',
-        :'first_txs_all_gambling' => :'String',
-        :'first_txs_in_onchain' => :'String',
-        :'first_txs_in_nft' => :'String',
-        :'first_txs_in_gaming' => :'String',
-        :'first_txs_in_gambling' => :'String',
-        :'first_txs_out_onchain' => :'String',
-        :'first_txs_out_nft' => :'String',
-        :'first_txs_out_gaming' => :'String',
-        :'first_txs_out_gambling' => :'String',
-        :'last_txs_all_onchain' => :'String',
-        :'last_txs_all_nft' => :'String',
-        :'last_txs_all_gaming' => :'String',
-        :'last_txs_all_gambling' => :'String',
-        :'last_txs_in_onchain' => :'String',
-        :'last_txs_in_nft' => :'String',
-        :'last_txs_in_gaming' => :'String',
-        :'last_txs_in_gambling' => :'String',
-        :'last_txs_out_onchain' => :'String',
-        :'last_txs_out_nft' => :'String',
-        :'last_txs_out_gaming' => :'String',
-        :'last_txs_out_gambling' => :'String'
+        :'first_txs_all_onchain' => :'Integer',
+        :'first_txs_all_nft' => :'Integer',
+        :'first_txs_all_gaming' => :'Integer',
+        :'first_txs_all_gambling' => :'Integer',
+        :'first_txs_in_onchain' => :'Integer',
+        :'first_txs_in_nft' => :'Integer',
+        :'first_txs_in_gaming' => :'Integer',
+        :'first_txs_in_gambling' => :'Integer',
+        :'first_txs_out_onchain' => :'Integer',
+        :'first_txs_out_nft' => :'Integer',
+        :'first_txs_out_gaming' => :'Integer',
+        :'first_txs_out_gambling' => :'Integer',
+        :'last_txs_all_onchain' => :'Integer',
+        :'last_txs_all_nft' => :'Integer',
+        :'last_txs_all_gaming' => :'Integer',
+        :'last_txs_all_gambling' => :'Integer',
+        :'last_txs_in_onchain' => :'Integer',
+        :'last_txs_in_nft' => :'Integer',
+        :'last_txs_in_gaming' => :'Integer',
+        :'last_txs_in_gambling' => :'Integer',
+        :'last_txs_out_onchain' => :'Integer',
+        :'last_txs_out_nft' => :'Integer',
+        :'last_txs_out_gaming' => :'Integer',
+        :'last_txs_out_gambling' => :'Integer'
       }
     end
 

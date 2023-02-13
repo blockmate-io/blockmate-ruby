@@ -64,30 +64,30 @@
 | **count_txs_out_7_nft** | **Integer** | OUT NFT transactions count during last week | [optional] |
 | **count_txs_out_7_gaming** | **Integer** | OUT gaming transactions count during last week | [optional] |
 | **count_txs_out_7_gambling** | **Integer** | OUT gambling transactions count during last week | [optional] |
-| **first_txs_all_onchain** | **String** | Time when first transaction occurred | [optional] |
-| **first_txs_all_nft** | **String** | Time when first NFT transaction occurred | [optional] |
-| **first_txs_all_gaming** | **String** | Time when first gaming transaction occurred | [optional] |
-| **first_txs_all_gambling** | **String** | Time when first gambling transaction occurred | [optional] |
-| **first_txs_in_onchain** | **String** | Time when first IN transaction occurred | [optional] |
-| **first_txs_in_nft** | **String** | Time when first IN NFT transaction occurred | [optional] |
-| **first_txs_in_gaming** | **String** | Time when first IN gaming transaction occurred | [optional] |
-| **first_txs_in_gambling** | **String** | Time when first IN gambling transaction occurred | [optional] |
-| **first_txs_out_onchain** | **String** | Time when first OUT transaction occurred | [optional] |
-| **first_txs_out_nft** | **String** | Time when first OUT NFT transaction occurred | [optional] |
-| **first_txs_out_gaming** | **String** | Time when first OUT gaming transaction occurred | [optional] |
-| **first_txs_out_gambling** | **String** | Time when first OUT gambling transaction occurred | [optional] |
-| **last_txs_all_onchain** | **String** | Time when last transaction occurred | [optional] |
-| **last_txs_all_nft** | **String** | Time when last NFT transaction occurred | [optional] |
-| **last_txs_all_gaming** | **String** | Time when last gaming transaction occurred | [optional] |
-| **last_txs_all_gambling** | **String** | Time when last gambling transaction occurred | [optional] |
-| **last_txs_in_onchain** | **String** | Time when last IN transaction occurred | [optional] |
-| **last_txs_in_nft** | **String** | Time when last IN NFT transaction occurred | [optional] |
-| **last_txs_in_gaming** | **String** | Time when last IN gaming transaction occurred | [optional] |
-| **last_txs_in_gambling** | **String** | Time when last IN gambling transaction occurred | [optional] |
-| **last_txs_out_onchain** | **String** | Time when last OUT transaction occurred | [optional] |
-| **last_txs_out_nft** | **String** | Time when last OUT NFT transaction occurred | [optional] |
-| **last_txs_out_gaming** | **String** | Time when last OUT gaming transaction occurred | [optional] |
-| **last_txs_out_gambling** | **String** | Time when last OUT gambling transaction occurred | [optional] |
+| **first_txs_all_onchain** | **Integer** | Unix timestamp when first transaction occurred | [optional] |
+| **first_txs_all_nft** | **Integer** | Unix timestamp when first NFT transaction occurred | [optional] |
+| **first_txs_all_gaming** | **Integer** | Unix timestamp when first gaming transaction occurred | [optional] |
+| **first_txs_all_gambling** | **Integer** | Unix timestamp when first gambling transaction occurred | [optional] |
+| **first_txs_in_onchain** | **Integer** | Unix timestamp when first IN transaction occurred | [optional] |
+| **first_txs_in_nft** | **Integer** | Unix timestamp when first IN NFT transaction occurred | [optional] |
+| **first_txs_in_gaming** | **Integer** | Unix timestamp when first IN gaming transaction occurred | [optional] |
+| **first_txs_in_gambling** | **Integer** | Unix timestamp when first IN gambling transaction occurred | [optional] |
+| **first_txs_out_onchain** | **Integer** | Unix timestamp when first OUT transaction occurred | [optional] |
+| **first_txs_out_nft** | **Integer** | Unix timestamp when first OUT NFT transaction occurred | [optional] |
+| **first_txs_out_gaming** | **Integer** | Unix timestamp when first OUT gaming transaction occurred | [optional] |
+| **first_txs_out_gambling** | **Integer** | Unix timestamp when first OUT gambling transaction occurred | [optional] |
+| **last_txs_all_onchain** | **Integer** | Unix timestamp when last transaction occurred | [optional] |
+| **last_txs_all_nft** | **Integer** | Unix timestamp when last NFT transaction occurred | [optional] |
+| **last_txs_all_gaming** | **Integer** | Unix timestamp when last gaming transaction occurred | [optional] |
+| **last_txs_all_gambling** | **Integer** | Unix timestamp when last gambling transaction occurred | [optional] |
+| **last_txs_in_onchain** | **Integer** | Unix timestamp when last IN transaction occurred | [optional] |
+| **last_txs_in_nft** | **Integer** | Unix timestamp when last IN NFT transaction occurred | [optional] |
+| **last_txs_in_gaming** | **Integer** | Unix timestamp when last IN gaming transaction occurred | [optional] |
+| **last_txs_in_gambling** | **Integer** | Unix timestamp when last IN gambling transaction occurred | [optional] |
+| **last_txs_out_onchain** | **Integer** | Unix timestamp when last OUT transaction occurred | [optional] |
+| **last_txs_out_nft** | **Integer** | Unix timestamp when last OUT NFT transaction occurred | [optional] |
+| **last_txs_out_gaming** | **Integer** | Unix timestamp when last OUT gaming transaction occurred | [optional] |
+| **last_txs_out_gambling** | **Integer** | Unix timestamp when last OUT gambling transaction occurred | [optional] |
 
 ## Example
 
@@ -155,30 +155,30 @@ instance = Blockmate::Analytics.new(
   count_txs_out_7_nft: 1,
   count_txs_out_7_gaming: 1,
   count_txs_out_7_gambling: 1,
-  first_txs_all_onchain: 2021-10-10T11:11:16Z,
-  first_txs_all_nft: 2021-10-10T11:11:16Z,
-  first_txs_all_gaming: 2021-10-10T11:11:16Z,
-  first_txs_all_gambling: 2021-10-10T11:11:16Z,
-  first_txs_in_onchain: 2021-10-10T11:11:16Z,
-  first_txs_in_nft: 2021-10-10T11:11:16Z,
-  first_txs_in_gaming: 2021-10-10T11:11:16Z,
-  first_txs_in_gambling: 2021-10-10T11:11:16Z,
-  first_txs_out_onchain: 2021-10-10T11:11:16Z,
-  first_txs_out_nft: 2021-10-10T11:11:16Z,
-  first_txs_out_gaming: 2021-10-10T11:11:16Z,
-  first_txs_out_gambling: 2021-10-10T11:11:16Z,
-  last_txs_all_onchain: 2021-10-10T11:11:16Z,
-  last_txs_all_nft: 2021-10-10T11:11:16Z,
-  last_txs_all_gaming: 2021-10-10T11:11:16Z,
-  last_txs_all_gambling: 2021-10-10T11:11:16Z,
-  last_txs_in_onchain: 2021-10-10T11:11:16Z,
-  last_txs_in_nft: 2021-10-10T11:11:16Z,
-  last_txs_in_gaming: 2021-10-10T11:11:16Z,
-  last_txs_in_gambling: 2021-10-10T11:11:16Z,
-  last_txs_out_onchain: 2021-10-10T11:11:16Z,
-  last_txs_out_nft: 2021-10-10T11:11:16Z,
-  last_txs_out_gaming: 2021-10-10T11:11:16Z,
-  last_txs_out_gambling: 2021-10-10T11:11:16Z
+  first_txs_all_onchain: 1674481020,
+  first_txs_all_nft: 1674481020,
+  first_txs_all_gaming: 1674481020,
+  first_txs_all_gambling: 1674481020,
+  first_txs_in_onchain: 1674481020,
+  first_txs_in_nft: 1674481020,
+  first_txs_in_gaming: 1674481020,
+  first_txs_in_gambling: 1674481020,
+  first_txs_out_onchain: 1674481020,
+  first_txs_out_nft: 1674481020,
+  first_txs_out_gaming: 1674481020,
+  first_txs_out_gambling: 1674481020,
+  last_txs_all_onchain: 1674481020,
+  last_txs_all_nft: 1674481020,
+  last_txs_all_gaming: 1674481020,
+  last_txs_all_gambling: 1674481020,
+  last_txs_in_onchain: 1674481020,
+  last_txs_in_nft: 1674481020,
+  last_txs_in_gaming: 1674481020,
+  last_txs_in_gambling: 1674481020,
+  last_txs_out_onchain: 1674481020,
+  last_txs_out_nft: 1674481020,
+  last_txs_out_gaming: 1674481020,
+  last_txs_out_gambling: 1674481020
 )
 ```
 
